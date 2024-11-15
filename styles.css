@@ -1,0 +1,186 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+/* Category filters styles */
+.category-filters {
+    margin-bottom: 2rem;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    background-color: #ecf0f1;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn:active {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Calendar Styles */
+.calendar-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.calendar-day {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.calendar-day h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+/* Event card styles */
+.event-card {
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.event-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Category colors */
+.event-card.sports {
+    border-left: 4px solid #e74c3c;
+}
+
+.event-card.education {
+    border-left: 4px solid #2ecc71;
+}
+
+.event-card.entertainment {
+    border-left: 4px solid #f39c12;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #34495e;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width:768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .calendar-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+}
+
+/* Accessibility improvements */
+.filter-btn:focus,
+.event-card:focus-within{
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high){
+    body{
+        background-color: #fff;
+        color: #000;
+    }
+
+    header,footer{
+        background-color: #000;
+        color: #fff;
+    }
+
+    .filter-btn,
+    .calendar-day,
+    .event-card{
+        border: 1px solid #000;
+    }
+
+    .filter-btn:hover,
+    .filter-btn:active{
+        background-color: #000;
+        color: #fff;
+    }
+}
